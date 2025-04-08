@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4vs5dq06f0ae"]
+
+[ext_resource type="Script" uid="uid://dpj4wvww12gce" path="res://board_square.gd" id="1_vakaf"]
+[ext_resource type="Texture2D" uid="uid://ecbug5ufq8ms" path="res://assets/sludge_pool.png" id="2_8tpf1"]
+
+[node name="BoardSquare" type="Node2D"]
+script = ExtResource("1_vakaf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_8tpf1")
