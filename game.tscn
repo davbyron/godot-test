@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnunytytyl6tu"]
+[gd_scene load_steps=5 format=3 uid="uid://bnunytytyl6tu"]
 
 [ext_resource type="PackedScene" uid="uid://ca73ojnkryjpj" path="res://board.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://dqgr2iirev66p" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://0gqexuinurwe" path="res://deck.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cb5m4kbfjnh3d" path="res://hand.tscn" id="3_fc0e3"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -9,5 +12,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_e2o6t")
 
 [node name="Board" parent="." instance=ExtResource("1_80nbo")]
+
+[node name="Deck" parent="." instance=ExtResource("2_feb5d")]
+layout_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(1920, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hand" parent="CenterContainer" instance=ExtResource("3_fc0e3")]
+custom_minimum_size = Vector2(1000, 384)
+layout_mode = 2
