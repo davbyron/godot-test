@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d1l0xcgmyexbw" path="res://deck.gd" id="1_cmqat"]
 
 [node name="Deck" type="Control"]
+custom_minimum_size = Vector2(192, 256)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,3 +11,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cmqat")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(192, 256)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer"]
+modulate = Color(0.286275, 0.360784, 0.858824, 1)
+layout_mode = 2
+text = "Deck"
+horizontal_alignment = 1
+vertical_alignment = 1

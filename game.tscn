@@ -18,13 +18,17 @@ script = ExtResource("1_e2o6t")
 
 [node name="Deck" parent="." instance=ExtResource("2_feb5d")]
 layout_mode = 1
+offset_left = 1600.0
+offset_top = 412.0
+offset_right = -128.0
+offset_bottom = -412.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(1920, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 824.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="Hand" parent="CenterContainer" instance=ExtResource("3_fc0e3")]
-custom_minimum_size = Vector2(1000, 384)
 layout_mode = 2
+alignment = 1

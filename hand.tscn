@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dniv3lt80s4be" path="res://hand.gd" id="1_u4p2i"]
 
 [node name="Hand" type="HBoxContainer"]
+custom_minimum_size = Vector2(1440, 256)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_u4p2i")
