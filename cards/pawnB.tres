@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://brmg4e7okltxg"]
+
+[ext_resource type="Script" uid="uid://b6ikwlmgoxip6" path="res://CardData.gd" id="1_tq3gc"]
+
+[resource]
+script = ExtResource("1_tq3gc")
+name = "Pawn B"
+level = 1
+attack = 1
+health = 1
+attackPattern = "B"
+movementPattern = "A"
+description = ""
+metadata/_custom_type_script = "uid://b6ikwlmgoxip6"
