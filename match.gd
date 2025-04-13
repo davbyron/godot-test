@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 @onready var deck = $Deck
 @onready var hand = $CenterContainer/Hand
@@ -6,6 +6,6 @@ extends Control
 
 func _ready():
 	var card = preload("res://Card.tscn").instantiate()
-	var card_data = load("res://cards/fireball.tres")
+	var card_data = load("res://cards/pawnB.tres")
 	card.set_card_data(card_data)
 	hand.add_child(card)

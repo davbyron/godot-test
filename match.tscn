@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgtrpadu5hl16"]
+
+[ext_resource type="Script" uid="uid://bgufxvsu1b7fi" path="res://match.gd" id="1_7y1jj"]
+[ext_resource type="PackedScene" uid="uid://ca73ojnkryjpj" path="res://board.tscn" id="2_crtjb"]
+[ext_resource type="PackedScene" uid="uid://b2it1xpqmxf4c" path="res://deck.tscn" id="3_xkuxl"]
+[ext_resource type="PackedScene" uid="uid://cb5m4kbfjnh3d" path="res://hand.tscn" id="4_xkuxl"]
+
+[node name="Match" type="Node2D"]
+script = ExtResource("1_7y1jj")
+
+[node name="Board" parent="." instance=ExtResource("2_crtjb")]
+
+[node name="Deck" parent="." instance=ExtResource("3_xkuxl")]
+position = Vector2(1619, 512)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 824.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Hand" parent="CenterContainer" instance=ExtResource("4_xkuxl")]
+layout_mode = 2
