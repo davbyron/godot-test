@@ -16,6 +16,7 @@ shape = SubResource("RectangleShape2D_mg3wr")
 custom_minimum_size = Vector2(192, 256)
 offset_right = 192.0
 offset_bottom = 256.0
+mouse_filter = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
 custom_minimum_size = Vector2(192, 0)

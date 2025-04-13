@@ -11,7 +11,7 @@ script = ExtResource("1_7y1jj")
 [node name="Board" parent="." instance=ExtResource("2_crtjb")]
 
 [node name="Deck" parent="." instance=ExtResource("3_xkuxl")]
-position = Vector2(1619, 512)
+position = Vector2(1578, 408)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_top = 824.0
