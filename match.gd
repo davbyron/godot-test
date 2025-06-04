@@ -4,7 +4,14 @@ extends Node2D
 @onready var hand = $CenterContainer/Hand/CardContainer
 @onready var board = $Board
 
+const MAX_HAND_SIZE = 8
+
 func _on_deck_clicked():
+	if hand.get_child_count() >= MAX_HAND_SIZE:
+		# TODO -- discard a card? burn a card? do nothing?
+		print("Hand is full.")
+		return
+	
 	var card = deck.deck_data.pick_random()
 	
 	if card:
