@@ -13,10 +13,5 @@ script = ExtResource("1_7y1jj")
 [node name="Deck" parent="." instance=ExtResource("3_xkuxl")]
 position = Vector2(1578, 408)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-offset_top = 824.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="Hand" parent="CenterContainer" instance=ExtResource("4_xkuxl")]
-layout_mode = 2
+[node name="Hand" parent="." instance=ExtResource("4_xkuxl")]
+position = Vector2(0, 824)
