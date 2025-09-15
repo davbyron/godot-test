@@ -18,8 +18,9 @@ func _on_deck_clicked():
 		var card_scene = preload("res://Card.tscn").instantiate()
 		card_scene.set_card_data(card)
 		
-		var offset = hand.get_child_count() * 200
-		card_scene.position = Vector2(offset, 0)
+		var offsetX = hand.get_child_count() * 200
+		var offsetY = 150
+		card_scene.position = Vector2(offsetX, offsetY)
 		
 		hand.add_child(card_scene)
 
