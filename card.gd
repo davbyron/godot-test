@@ -4,7 +4,7 @@ var card_data
 
 const NORMAL_SCALE := Vector2.ONE
 const HOVER_SCALE := Vector2(1.5, 1.5)
-const LIFT_AMOUNT := -40
+const LIFT_AMOUNT := -200
 const TWEEN_TIME := 0.15
 
 var _tween: Tween
@@ -24,14 +24,14 @@ func _on_mouse_entered():
 	_update_hover()
 
 func _on_mouse_exited():
-	hover_offset = 0
+	hover_offset = -LIFT_AMOUNT
 	_update_hover()
 
 func _update_hover():
 	if _tween:
 		_tween.kill()
 
-	var target_scale = HOVER_SCALE if hover_offset != 0 else NORMAL_SCALE
+	var target_scale = HOVER_SCALE if hover_offset < 0 else NORMAL_SCALE
 	# Y position = base layout Y + hover offset
 	var target_y = position.y + hover_offset
 
