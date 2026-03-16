@@ -8,11 +8,14 @@ const LIFT_AMOUNT := -200
 const TWEEN_TIME := 0.15
 
 var _tween: Tween
+var base_position := Vector2.ZERO
 var hover_offset := 0.0   # offset applied on top of layout position
+
+@onready var visual := $Visual
 
 func set_card_data(data):
 	card_data = data
-	$ColorRect/CenterContainer/Title.text = card_data.name
+	$Visual/ColorRect/CenterContainer/Title.text = card_data.name
 
 func _ready():
 	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
@@ -24,7 +27,7 @@ func _on_mouse_entered():
 	_update_hover()
 
 func _on_mouse_exited():
-	hover_offset = -LIFT_AMOUNT
+	hover_offset = 0
 	_update_hover()
 
 func _update_hover():
@@ -33,11 +36,12 @@ func _update_hover():
 
 	var target_scale = HOVER_SCALE if hover_offset < 0 else NORMAL_SCALE
 	# Y position = base layout Y + hover offset
-	var target_y = position.y + hover_offset
+	var target_y = base_position.y + hover_offset
 
 	_tween = get_tree().create_tween()
 	_tween.set_parallel(true)
-	_tween.tween_property(self, "scale", target_scale, TWEEN_TIME)\
+
+	_tween.tween_property(visual, "scale", target_scale, TWEEN_TIME)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	_tween.tween_property(self, "position:y", target_y, TWEEN_TIME)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)

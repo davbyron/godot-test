@@ -35,15 +35,16 @@ func _reposition_hand():
 			
 		var angle_deg = lerp(-max_angle, max_angle, t)
 		var angle_rad = deg_to_rad(angle_deg)
-		card.rotation = angle_rad
 
 		# Tween position and rotation for smoothness
 		var tween = get_tree().create_tween()
 		tween.set_parallel(true)
 		tween.tween_property(card, "position", target_pos, 0.2)\
 			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		tween.tween_property(card, "rotation", angle_rad, 0.2)\
+		tween.tween_property(card.visual, "rotation", angle_rad, 0.2)\
 			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+			
+		card.base_position = target_pos
 
 func _on_deck_clicked():
 	if hand.get_child_count() >= MAX_HAND_SIZE:
