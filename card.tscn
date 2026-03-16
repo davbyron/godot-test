@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7kdxdup7knrb" path="res://card.gd" id="1_kikvd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kikvd"]
-size = Vector2(192, 835)
+size = Vector2(200, 835)
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_kikvd")
@@ -28,6 +28,18 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Visual/ColorRect"]
+offset_right = 7.0
+offset_bottom = 256.0
+color = Color(0, 1, 1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Visual/ColorRect"]
+layout_mode = 0
+offset_left = 185.0
+offset_right = 192.0
+offset_bottom = 256.0
+color = Color(0, 1, 1, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="Visual/ColorRect"]
 custom_minimum_size = Vector2(192, 0)

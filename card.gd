@@ -27,7 +27,11 @@ func _on_mouse_entered():
 	_update_hover()
 
 func _on_mouse_exited():
+	unhover()
+
+func unhover():
 	hover_offset = 0
+	z_index = 0
 	_update_hover()
 
 func _update_hover():
